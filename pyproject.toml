@@ -1,0 +1,11 @@
+[project]
+name = "Ironman-Analyzer"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "bs4>=0.0.2",
+    "polars>=1.27.1",
+    "requests>=2.32.3",
+    "textual>=3.1.0",
+]
