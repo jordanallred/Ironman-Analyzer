@@ -22,21 +22,14 @@ This project provides a suite of tools to:
 
 ### Requirements
 
-- Python 3.12 or higher
-- pip (Python package installer)
+- uv
 
 ### Setup
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jordanallred/Ironman-Analyzer.git
-   cd Ironman-Analyzer
-   ```
-
-2. Install the required dependencies:
-   ```bash
-   uv pip install .
-   ```
+```bash
+git clone https://github.com/jordanallred/Ironman-Analyzer.git
+cd Ironman-Analyzer
+```
 
 ## Usage
 
@@ -45,17 +38,8 @@ This project provides a suite of tools to:
 Use the `scraper.py` script to collect race results:
 
 ```bash
-# Fetch results for a specific race
-python scraper.py --race "https://www.ironman.com/im-world-championship-kona"
-
 # Filter races by type and region
-python scraper.py --race-types "IRONMAN" "IRONMAN 70.3" --regions "North America" "Europe"
-
-# Fetch races from specific years
-python scraper.py --years 2024 2025
-
-# List available filter options
-python scraper.py --list-options
+uv run scraper.py --race-types "IRONMAN" "IRONMAN 70.3" --regions "North America" "Europe" --years "2024" "2023"
 ```
 
 ### Collecting Qualification Slot Data
@@ -63,7 +47,7 @@ python scraper.py --list-options
 Use the `qualify.py` script to collect information about qualification slots for World Championship events:
 
 ```bash
-python qualify.py
+uv run qualify.py
 ```
 
 This will generate a `qualifying_slots.json` file containing allocation data for various races.
@@ -73,7 +57,7 @@ This will generate a `qualifying_slots.json` file containing allocation data for
 Use the `analyze.py` script to launch the interactive TUI for analyzing race data:
 
 ```bash
-python analyze.py
+uv run analyze.py
 ```
 
 #### Using the TUI
